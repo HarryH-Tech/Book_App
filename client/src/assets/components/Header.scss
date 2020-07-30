@@ -1,0 +1,19 @@
+#header-container {
+  display: flex;
+  height: 12vh;
+  justify-content: space-between;
+
+  #title-container {
+    float: left;
+    padding: 0rem 0.6rem;
+
+    #title {
+      color: rgb(4, 226, 255);
+      border-bottom: 0.2rem solid rgb(4, 226, 255);
+    }
+  }
+
+  #menu-container {
+    padding: 1rem;
+  }
+}
