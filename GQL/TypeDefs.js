@@ -2,13 +2,13 @@ const gql = require("graphql-tag");
 
 module.exports = gql`
   type Book {
-    # bookId: ID!
+    id: ID!
     title: String!
-    # author: String!
-    # summary: String!
-    # yearPublished: String!
-    # createdAt: String!
-    # image: String!
+    author: String!
+    summary: String!
+    yearPublished: String!
+    createdAt: String!
+    image: String!
     comments: [Comment]!
     likes: [Like]!
     likeCount: Int!
@@ -51,8 +51,15 @@ module.exports = gql`
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
-    addBook(title: String!): Book!
-    deleteBook(bookID: ID!): String!
+    addBook(
+      title: String!
+      author: String
+      yearPublished: String
+      summary: String
+      image: String
+      createdAt: String
+    ): Book!
+    deleteBook(bookId: ID!): String!
 
     createComment(bookId: String!, body: String!): Book!
     deleteComment(bookId: ID!, commentId: String!): Book!

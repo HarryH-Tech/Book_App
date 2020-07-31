@@ -13,7 +13,7 @@ module.exports = {
       }
     },
     async getBook(_, { bookId }) {
-      console.log(bookId);
+      console.log("bookid = ", bookId);
       try {
         if (!bookId.match(/^[0-9a-fA-F]{24}$/)) {
           throw new Error("Invalid Book ID");
@@ -32,11 +32,19 @@ module.exports = {
   },
 
   Mutation: {
-    async addBook(_, { title }, context) {
+    async addBook(
+      _,
+      { title, author, yearPublished, summary, image },
+      context
+    ) {
       const user = checkAuth(context);
 
       const newBook = new Book({
         title,
+        author,
+        yearPublished,
+        summary,
+        image,
         user: user.id,
         username: user.username,
         createdAt: new Date().toISOString(),
