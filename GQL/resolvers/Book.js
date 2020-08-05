@@ -18,12 +18,33 @@ module.exports = {
         if (!bookId.match(/^[0-9a-fA-F]{24}$/)) {
           throw new Error("Invalid Book ID");
         }
-
         const book = await Book.findById(bookId);
         if (book) {
           return book;
         } else {
           throw new Error("Book Not Found.");
+        }
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
+
+    async getRandomBook(_) {
+      var query = {
+        state: "OK",
+        rnd: {
+          $gte: Math.random(),
+        },
+      };
+
+      try {
+        const book = await Book.findOne(query);
+
+        console.log(Book);
+        if (book) {
+          return book;
+        } else {
+          throw new Error("Random Book Not Found.");
         }
       } catch (err) {
         throw new Error(err);

@@ -8,7 +8,11 @@ function Menu({ open, setOpen }) {
     <>
       {open && (
         <div id="mobile-menu-container" open={open}>
-          <Link to="/" class="mobile-link" onClick={() => setOpen(false)}>
+          <Link
+            to="/all_books"
+            class="mobile-link"
+            onClick={() => setOpen(false)}
+          >
             All Books
           </Link>
 

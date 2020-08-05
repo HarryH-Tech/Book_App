@@ -5,7 +5,7 @@ function WideMenu() {
   return (
     <div id="wide-menu-container">
       <h3>
-        <Link to="/" class="link">
+        <Link to="/all_books" class="link">
           All Books
         </Link>
       </h3>

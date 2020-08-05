@@ -1,0 +1,78 @@
+@import "../Utils.scss";
+
+#register-form {
+  @include container;
+  background-color: #efefef;
+  padding: 1rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  color: $dark-blue;
+
+  #title {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .label {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .input {
+    border: 0.1rem solid $light-blue;
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+    margin: 1rem auto;
+    width: 80%;
+
+    transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    -ms-transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+
+    &:hover {
+      border-color: $dark-blue;
+
+      -webkit-box-shadow: 3px 4px 5px 0px #000000bf;
+      -moz-box-shadow: 3px 4px 5px 0px #000000bf;
+      box-shadow: 3px 4px 5px 0px #000000bf;
+    }
+
+    &:active {
+      transform: translateY(0.3rem);
+    }
+  }
+
+  .register-button {
+    @include button;
+    cursor: pointer;
+
+    transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    -ms-transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+
+    background-color: #00fff2;
+    border: 0.1rem solid #00fff2;
+
+    &:hover {
+      -webkit-box-shadow: 3px 4px 5px 0px #000000bf;
+      -moz-box-shadow: 3px 4px 5px 0px #000000bf;
+      box-shadow: 3px 4px 5px 0px #000000bf;
+    }
+
+    &:active {
+      transform: translateY(0.5rem);
+    }
+  }
+}
+
+#sign-up {
+  color: $black;
+  text-align: center;
+}
